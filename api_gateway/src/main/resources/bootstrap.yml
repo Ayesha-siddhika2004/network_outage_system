@@ -1,0 +1,8 @@
+spring:
+  application:
+    name: api-gateway   # Change per microservice: eureka-server, outage-service, etc.
+  cloud:
+    config:
+      uri: http://localhost:8888
+  profiles:
+    active: default

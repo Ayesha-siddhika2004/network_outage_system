@@ -1,0 +1,26 @@
+server:
+  port: 8081  # API Gateway port
+
+spring:
+  application:
+    name: api-gateway
+  cloud:
+    gateway:
+      routes:
+        - id: outage_stimulator
+          uri: lb://outage_stimulator  # lb means load-balanced (Eureka)
+          predicates:
+            - Path=/outageModel/**
+        - id: incident-management-service
+          uri: lb://incident-management-service
+          predicates:
+            - Path=/incidentModel/**
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+
+incident:
+  service:
+    url: http://API-GATEWAY/api
