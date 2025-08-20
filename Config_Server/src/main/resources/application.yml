@@ -1,8 +1,0 @@
-spring:
-  cloud:
-    config:
-      server:
-        git:
-          uri: https://github.com/Sai-Akshaya-L/network-outage-config
-          username: ${GIT_USERNAME}
-          password: ${GIT_PASSWORD}
