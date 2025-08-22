@@ -93,7 +93,6 @@ public class OutageService {
         String randomArea = areasOfRegion.get(random.nextInt(areasOfRegion.size()));
 
         // 3. Other random values
-        String type = random.nextBoolean() ? "Power" : "Network";
         String severity = random.nextBoolean() ? "High" : "Low";
         LocalDateTime startTime = LocalDateTime.now();
         LocalDateTime expectedEndTime = startTime.plusHours(3);
@@ -105,7 +104,6 @@ public class OutageService {
                 randomArea,
                 startTime,
                 expectedEndTime,
-                type,
                 severity
         );
 
@@ -119,7 +117,6 @@ public class OutageService {
                 savedOutage.getArea(),
                 savedOutage.getStartTime(),
                 savedOutage.getExpectedEndTime(),
-                savedOutage.getType(),
                 savedOutage.getSeverity()
         );
 
