@@ -14,20 +14,18 @@ public class OutageModel {
     private String area;
     private LocalDateTime startTime;        // Outage start time
     private LocalDateTime expectedEndTime;  // New field ✅
-    private String type; //power,network
     private String severity;
 
     public OutageModel() {}
 
     public OutageModel(String outId, String randomRegion, String randomArea, LocalDateTime startTime,
                        LocalDateTime expectedEndTime,
-                       String type, String severity) {
+                        String severity) {
         this.outId = outId;
         this.region=randomRegion;
         this.area=randomArea;
         this.startTime = startTime;
         this.expectedEndTime = expectedEndTime;
-        this.type = type;
         this.severity = severity;
     }
 
@@ -71,14 +69,6 @@ public class OutageModel {
 
 	public void setExpectedEndTime(LocalDateTime expectedEndTime) {
 		this.expectedEndTime = expectedEndTime;
-	}
-
-	public String getType() {
-		return type;
-	}
-
-	public void setType(String type) {
-		this.type = type;
 	}
 
 	public String getSeverity() {
